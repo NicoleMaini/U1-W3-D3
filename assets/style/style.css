@@ -28,8 +28,10 @@ header, main{
     padding-block-start: 4rem;
     margin-inline: auto;
     margin-block: 0;
-    background-color: rgb(245, 239, 220);
+    background-color: rgb(255, 239, 215);
     text-align: center;
+    border-left: 1px rgb(163, 162, 162) solid;
+    border-right: 1px rgb(163, 162, 162) solid;
   
 }
 
@@ -44,44 +46,54 @@ input{
     width: 70%;
     margin-inline: auto;
     height: 3rem;
-    border: 1px rgb(163, 162, 162) solid;
+    border: none;
+    border-block-end: 1px rgb(163, 162, 162) solid;
     border-radius: 4px;
     box-shadow: 0 1px 3px 1px rgb(198, 196, 196);
 
 }
 
+
 .btn-style{
-    display: inline-block;
+   display: inline-block;
    margin-block: 1rem;
    padding: 0.5rem;
    background-color: bisque;
-   border: 1px rgb(163, 162, 162) solid;
+   border: none;
+   border-bottom: 1px rgb(163, 162, 162) solid;
    box-shadow: 0 1px 3px 1px rgb(198, 196, 196);
+   font-size: 0.75rem;
 }
 
 
 .element{
     margin-inline: 1rem;
     margin-block: 0.5rem ;
-    font-size: 1.5rem;
+    font-size: 1rem;
+    list-style-type: circle;
 }
 
 .btn-delete{
-    margin-inline-start: 3rem;
+    display: inline-block;
+    text-align: right;
+    margin-inline-start: 1rem;
+    border: none;
+    background-color: transparent;
+}
+
+li {
+    text-align: left;
+    border-block-end: 1px solid gray;
 }
 
 #task-list-container{
-    text-align: center;
     margin-inline: auto;
     margin-top: 3rem;
     width: 70%;
 }
-#task-list-container button{
-    display: inline-block;
-    align-items: end;
-    border: none;
-    background-color: transparent;
-    
+
+.strike{
+    text-decoration: line-through
 }
 
 

@@ -6,18 +6,17 @@ console.log(addPhrase);
 const btn = document.querySelector(".btn-style")
 console.log(btn);
 
-// chiamo la funzione change per entrare in azione quando premo enter
-
 
 const genereteList = textInputObj => {
-
-    const element = document.createElement("p")
-    element.innerText = textInputObj.textInput 
-    element.className = "element"
-
-    element.onclick = a => {element.style = "text-decoration: line-through"}
+    
+    const element = document.createElement("li")
+    element.innerText = textInputObj.textInput;
+    element.className = "element";
+    
+    element.onclick = a => {element.classList.toggle("strike")};
+    
     const elementsContainer = document.getElementById("task-list-container")
-
+    
     
     const btnDelete = document.createElement("button");
     btnDelete.className = "btn-delete";
@@ -25,25 +24,28 @@ const genereteList = textInputObj => {
     btnDelete.onclick = e =>{
         e.currentTarget.parentNode.remove()
     }
-
+    
     element.appendChild(btnDelete);
     elementsContainer.appendChild(element);
-    e.currentTarget.reset()
-
-
+    
 }
+
+// chiamo la funzione change per entrare in azione quando premo enter
 
 addPhrase.addEventListener("change", (e) => {
     const textInputObj = {textInput: addPhrase.value}
     genereteList(textInputObj)
-   
+    addPhrase.value = ""; // aggiunta per far tornare l'imput vuoto
 }
 )
 
+// chiamo la funzione click per entrare in azione quando premo il bottone
+
 btn.addEventListener("click", (e) => {
+    if(addPhrase.value !== ""){ // aggiunta per impedire all'input di eseguirsi
     const textInputObj = {textInput: addPhrase.value}
-    genereteList(textInputObj)
-    
+    genereteList(textInputObj)   
+    addPhrase.value = "";}
 }
 )
 
